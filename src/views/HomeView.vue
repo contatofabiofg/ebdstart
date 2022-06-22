@@ -31,5 +31,7 @@ export default defineComponent({
 });
 </script>
 <style>
-
+.home {
+  max-width: 75%;
+}
 </style>

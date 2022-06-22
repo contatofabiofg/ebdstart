@@ -1,5 +1,5 @@
 <template>
-<div class="botao w-80 my-1 d-flex flex-column justify-content-center align-items-center" >{{texto}}</div>
+<div class="botao w-60 my-1 d-flex flex-column justify-content-center align-items-center" >{{texto!.toUpperCase()}}</div>
 </template>
 
 <script lang="ts">
@@ -7,7 +7,7 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'BotaoC',
-    props: {
+  props: {
     texto: String,
     path: String
   },
@@ -21,10 +21,12 @@ export default defineComponent({
 
 .botao {
     background-color: rgb(247, 247, 247);
-    height: 50px;
-    margin-left: 10px;
+    height: 30px;
+    margin-left: 30px;
     cursor: pointer;
-    overflow: hidden;
+    font-size: 11px;
+   overflow: hidden;
+    
 }
 .botao:hover {
     background-color: rgb(236, 236, 236);

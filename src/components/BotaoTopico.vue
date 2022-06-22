@@ -1,5 +1,5 @@
 <template>
-<div class="botao w-100 my-1 font-weight-bold d-flex flex-column justify-content-center align-items-center"><strong>{{texto}}</strong>
+<div class="botao w-70 my-1 font-weight-bold d-flex flex-column justify-content-center align-items-center"><strong>{{texto!.toUpperCase()}}</strong>
 
 </div>
   
@@ -22,9 +22,10 @@ export default defineComponent({
 .botao {
     background-color: rgb(236, 236, 236);
     cursor: pointer;
-    height: 100px;
+    height: 50px;
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
+     font-size: 14px;
 }
 .botao:hover {
     background-color: rgb(209, 209, 209);
