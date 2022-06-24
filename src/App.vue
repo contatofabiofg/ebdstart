@@ -1,6 +1,6 @@
 <template>
   <div class="painel d-flex flex-row ">
-        <Sidebar />
+    <Sidebar />
     <router-view />
   </div>
 </template>
@@ -13,14 +13,10 @@ export default defineComponent({
   components: {
     Sidebar,
   }
-
 });
 </script>
 <style scoped>
-
-
 .painel {
   overflow-x: hidden;
 }
-
 </style>

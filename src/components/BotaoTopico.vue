@@ -1,5 +1,5 @@
 <template>
-<div class="botao w-70 my-1 font-weight-bold d-flex flex-column justify-content-center align-items-center"><strong>{{texto!.toUpperCase()}}</strong>
+<div class="botaotopico w-70 my-1 font-weight-bold d-flex flex-column justify-content-center align-items-center"><strong>{{texto!.toUpperCase()}}</strong>
 
 </div>
   
@@ -19,7 +19,7 @@ export default defineComponent({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.botao {
+.botaotopico {
     background-color: rgb(236, 236, 236);
     cursor: pointer;
     height: 50px;
@@ -27,7 +27,7 @@ export default defineComponent({
     font-family: Arial, Helvetica, sans-serif;
      font-size: 14px;
 }
-.botao:hover {
+.botaotopico:hover {
     background-color: rgb(209, 209, 209);
 
 }

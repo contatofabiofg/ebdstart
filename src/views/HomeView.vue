@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-  {{forceRerender()}}
-      <Post :key="componentKey"/>
-     
+    <Post :key="componentKey"/>
   </div>
 </template>
 
@@ -15,19 +13,23 @@ export default defineComponent({
   components: {
     Post
   },
+  watch:{
+    $route (){
+        this.forceRerender()
+    }
+  },
   data() {
-        return {
-            url: window.location.pathname,
-             componentKey: 0
-           
-        }
-    },
-    methods: {
+    return {
+      url: window.location.pathname,
+      componentKey: 0
+    }
+  },
+  methods: {
     forceRerender():void {
-      this.componentKey += 1
+      console.log("Post recarregado")
+    this.componentKey += 1
     }
   }
-  
 });
 </script>
 <style>
