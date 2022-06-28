@@ -26,11 +26,11 @@
                     </router-link>
                 </div>
             </div>
-            <BotaoTopico texto="Tópico2" @click="mostrarlista2" />
-            <div v-if="topicos2">
-                <div v-for="(item, index) in postagem" :key="index">
+            <BotaoTopico texto="Exercícios" @click="mostrarexercicios" />
+            <div v-if="menuexercicios">
+                <div v-for="(item, index) in exercicio" :key="index">
                     <router-link style="text-decoration: none; color: inherit;" :to="item.path">
-                        <Botao :texto="item.titulo" />
+                        <Botao :texto="item.nome" />
                     </router-link>
                 </div>
             </div>
@@ -42,6 +42,7 @@ import { defineComponent } from 'vue';
 import Botao from "@/components/Botao.vue"
 import BotaoTopico from "@/components/BotaoTopico.vue"
 import postagem from "@/posts"
+import exercicio from "@/exercicios"
 import _ from 'lodash';
 
 
@@ -53,8 +54,9 @@ export default defineComponent({
             topicos1: false,
             topicos2: false,
             topicos3: false,
-            topicos4: false,
+            menuexercicios: false,
             postagem,
+            exercicio,
             timeout: 0,
     }
   },
@@ -69,6 +71,9 @@ export default defineComponent({
         },
         mostrarlista2(): void {
             this.topicos2 = !this.topicos2 //esse código retorna um true ou false, ou seja, o retorno será o retorno dessa operação de comparação
+        },
+        mostrarexercicios(): void {
+            this.menuexercicios = !this.menuexercicios //esse código retorna um true ou false, ou seja, o retorno será o retorno dessa operação de comparação
         },
   }, 
   components: {

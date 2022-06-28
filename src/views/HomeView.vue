@@ -26,7 +26,7 @@ export default defineComponent({
   },
   methods: {
     forceRerender():void {
-      console.log("Post recarregado")
+    console.log("Post recarregado")
     this.componentKey += 1
     }
   }
