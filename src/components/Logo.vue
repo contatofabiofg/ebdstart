@@ -16,9 +16,11 @@ export default defineComponent({
 
 <style scoped>
 .primeiraarea {
-    width: 70px;
+     max-width: 100%;
+     width: 70px;
      height: 70px;
      margin: 20px;
      background-color: white;
+     
 }
 </style>

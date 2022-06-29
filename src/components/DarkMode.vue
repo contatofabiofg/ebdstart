@@ -1,34 +1,34 @@
 <template>
-<div class="botaotopico w-70 my-1 font-weight-bold d-flex flex-column justify-content-center align-items-center"><strong>{{texto!.toUpperCase()}}</strong>
-
-</div>
-  
+<div class="dark my-1 d-flex flex-column justify-content-center align-items-center"  >{{texto}}</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'BotaoTopicoC',
+  name: 'DarkModeC',
   props: {
-    texto: String,
-  },
-});
+    texto: String
+  }
+   });
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.botaotopico {
+.dark {
     background-color: var(--botaocor);
     color: var(--texto);
+    height: 30px;
+    width: 100px;
+    max-width: 100%;
     cursor: pointer;
-    height: 50px;
+    font-size: 11px;
     overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-     font-size: 14px;
+    
 }
-.botaotopico:hover {
+.dark:hover {
     background-color: var(--botaocorover);
 
 }

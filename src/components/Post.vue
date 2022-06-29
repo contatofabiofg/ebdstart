@@ -38,6 +38,8 @@ export default defineComponent({
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
 
 .post {
+    background-color: var(--bg);
+    color: var(--texto);
     font-family: 'Roboto';
     margin: 50px;
     width: 75%;

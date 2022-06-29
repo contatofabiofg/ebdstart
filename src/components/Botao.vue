@@ -20,7 +20,8 @@ export default defineComponent({
 <style scoped>
 
 .botao {
-    background-color: rgb(247, 247, 247);
+    background-color: var(--botaocor);
+    color: var(--texto);
     height: 30px;
     margin-left: 30px;
     cursor: pointer;
@@ -29,7 +30,7 @@ export default defineComponent({
     
 }
 .botao:hover {
-    background-color: rgb(236, 236, 236);
+    background-color: var(--botaocorover);
 
 }
 

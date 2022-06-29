@@ -89,18 +89,6 @@ export default defineComponent({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.botao {
-    background-color: rgb(247, 247, 247);
-    height: 30px;
-    margin-left: 30px;
-    cursor: pointer;
-    font-size: 11px;
-   overflow: hidden;
-    
-}
-.botao:hover {
-    background-color: rgb(236, 236, 236);
 
-}
 
 </style>

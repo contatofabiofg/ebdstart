@@ -2,6 +2,7 @@
     <div class="sidebar" :class="{ 'sidebarfechado': sidebarvisible }">
         <Openclose @click="sidebartoggle" :info="sidebarvisible" :key="contadorOpenClose" />
         <Logo />
+        <DarkMode @click="mudarmodo()" :texto="`${textodobotao}`"/>
         <div class="campoinput">
             <input class="input form-control" placeholder="Encontrar" v-model="busca" @keyup="realizarbusca(busca)" />
         </div>
@@ -13,9 +14,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Openclose from "@/components/Openclose.vue"
-import postagem from "@/posts"
-import Logo from "@/components/Logo.vue"
+import Openclose from "@/components/Openclose.vue";
+import postagem from "@/posts";
+import Logo from "@/components/Logo.vue";
+import DarkMode from "@/components/DarkMode.vue";
 import _ from 'lodash';
 import MenuPrincipal from './MenuPrincipal.vue';
 import MenuBusca from './MenuBusca.vue';
@@ -36,13 +38,28 @@ export default defineComponent({
             campobuscavazio: true,
             botaoencontrado: false,
             timeout: 0,
+            mododarkativado: false,
+            
         }
     },
+    computed: {
+        textodobotao(): string {
+            if(this.mododarkativado) {
+                return "Modo Claro"
+            } else {
+                return "Modo Escuro"
+            }
+
+
+        }
+    },
+    emits: ["trocarModo"],
     components: {
         Openclose,
         Logo,
         MenuPrincipal,
-        MenuBusca
+        MenuBusca,
+        DarkMode
     },
     methods: {
         mostrarlista1(): void {
@@ -77,7 +94,11 @@ export default defineComponent({
         },
         requisicaoteste(texto: string): void {
             console.log(texto)
-        }
+        },
+        mudarmodo() {
+        this.$emit("trocarModo");
+        this.mododarkativado = !this.mododarkativado
+    }
     }
 });
 </script>
@@ -86,9 +107,10 @@ export default defineComponent({
     min-width: 300px;
     min-height: 100vh;
     height: auto;
-    background-color: rgb(190, 190, 190);
+    background-color: var(--sidebarbg);
     transition: all 0.2s ease;
     padding: 10px;
+    
 }
 .openclose {
     width: 60px;
@@ -104,9 +126,15 @@ export default defineComponent({
     overflow: hidden;
 }
 .input {
+    background-color: var(--bg);
+    color: var(--texto);
     border: none;
     position: relative;
     margin-bottom: 10px;
+}
+.input:focus {
+     background-color: var(--bg);
+    color: var(--texto);
 }
 .form-control:focus {
     border-color: inherit;
