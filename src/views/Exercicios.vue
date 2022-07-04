@@ -1,17 +1,17 @@
 <template>
-  <div class="home">
-    <Post :key="componentKey"/>
+  <div class="exercicio">
+    <Exercicio :key="componentKey"/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Post from "@/components/Post.vue"
+import Exercicio from "@/components/Exercicio.vue"
 
 export default defineComponent({
-  name: 'HomeView',
+  name: 'ExerciciosV',
   components: {
-    Post
+    Exercicio
   },
   watch:{
     $route (){
