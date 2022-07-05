@@ -34,6 +34,11 @@
                     </router-link>
                 </div>
             </div>
+                              <router-link style="text-decoration: none; color: inherit;" to="novapostagem">
+                        <BotaoTopico texto="Nova Postagem" />
+                    </router-link>
+                
+            
         </div>
         </template>
 

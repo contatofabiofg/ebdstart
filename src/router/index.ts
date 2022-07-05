@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Postagens from '../views/Postagens.vue'
 import Home from "@/views/Home.vue"
 import Exercicios from "@/views/Exercicios.vue"
+import NovaPostagem from "@/views/NovaPostagem.vue"
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -19,6 +20,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/exercicios/:exercicios',
     name: 'exercicios',
     component: Exercicios
+  },
+  {
+    path: '/novapostagem',
+    name: 'novapostagem',
+    component: NovaPostagem
   },
   {
     path: '/cadastro',

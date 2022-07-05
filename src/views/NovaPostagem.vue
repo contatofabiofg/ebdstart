@@ -1,15 +1,19 @@
 <template>
   <div class="hello">
-    Olá! Você está numa aplicação desenvolvida por Fábio Gonçalves, fruto do seus estudos de VueJs. Enjoy!
+    <Editor/>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import Editor from "@/components/Editor.vue"
 
 
 export default defineComponent({
-  name: 'HomeV',
+  name: 'NovaPostagemV',
+  components: {
+    Editor
+  }
  
 });
 </script>

@@ -48,9 +48,6 @@ export default defineComponent({
             doc.setFontSize(15);
             doc.text(subtitulo, 180, 90, {maxWidth: 170});
 
-            doc.setFont('courier', "normal");
-            doc.setFontSize(10);
-            //doc.text(texto, 20, 80, {maxWidth: 170});
             doc.html(`<div style="width:1350px; font-size:20px">${texto}</div>`, {
                 x: 20,
                 y: 120,
@@ -65,8 +62,6 @@ export default defineComponent({
             }
         })
 
-            //doc.autoPrint();
-            //doc.output('dataurlnewwindow');
         }
     }
 });
