@@ -34,6 +34,7 @@ main {
 
 .modoclaro {
   --bg: white;
+  --gradiente: linear-gradient(54deg, rgba(79,81,84,1) 0%, rgba(105,97,126,1) 46%, rgba(136,138,138,1) 100%);
   --texto: black;
   --botaocor: rgb(247, 247, 247);
   --botaocor2: rgb(190, 190, 190);
@@ -44,6 +45,7 @@ main {
 }
 .mododark {
   --bg: rgb(75, 75, 75);
+  --gradiente: linear-gradient(54deg, rgba(17,20,23,1) 0%, rgba(29,23,43,1) 46%, rgba(54,56,56,1) 100%);
   --texto: white;
   --botaocor: rgb(64, 51, 80);
   --botaocor2: rgb(64, 51, 80);
@@ -55,4 +57,6 @@ main {
 .painel {
   overflow-x: hidden;
 }
+
+
 </style>

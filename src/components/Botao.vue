@@ -1,5 +1,5 @@
 <template>
-<div class="botao w-60 my-1 d-flex flex-column justify-content-center align-items-center" >{{texto!.toUpperCase()}}</div>
+<div class="botao w-60  d-flex flex-column justify-content-center align-items-center cursor-pointer overflow-hidden" >{{texto!.toUpperCase()}}</div>
 </template>
 
 <script lang="ts">
@@ -24,14 +24,13 @@ export default defineComponent({
     color: var(--texto);
     height: 30px;
     margin-left: 30px;
-    cursor: pointer;
     font-size: 11px;
-   overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid gray;
     
-}
+   }
 .botao:hover {
     background-color: var(--botaocorover);
-
 }
 
 </style>

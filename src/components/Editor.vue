@@ -1,5 +1,5 @@
 <template>
-<div class="areaeditor">
+<div class="areaeditor m-5">
   <div class="texto">Título</div>
   <input type="text" v-model="titulo"/>
   <div class="texto">Subtítulo</div>
@@ -8,7 +8,7 @@
   <input type="text" v-model="path"/>
   <div class="texto">Texto</div>
 <QuillEditor v-model:content="html" contentType="html" theme="snow" />
-  <div class="save" @click="save()">Salvar</div>
+  <div class="save d-inline-block p-2 m-2" @click="save()">Salvar</div>
 </div>
   
 
@@ -54,10 +54,8 @@ export default defineComponent({
 
 <style scoped>
 .areaeditor {
-  width: 800px;
+  max-width: 1000px;
   height: 250px;
-  margin-left: 40px;
-  margin-top: 40px;
   color: var(--texto);
   
 }
@@ -68,14 +66,16 @@ export default defineComponent({
 }
 input {
   background-color: var(--bg);
-  color: var(--texto)
+  color: var(--texto);
+  border: 1px solid;
 }
 .save {
   cursor: pointer;
   font-weight: bold;
   margin-top: 10px;
   border: 2px solid black;
-  padding: 10px;
-  display: inline-block;
+  
+  
 }
+
 </style>

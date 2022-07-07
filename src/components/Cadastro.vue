@@ -1,6 +1,6 @@
 <template>
-  <div class="cadastro">
-    <div class="telas">
+  <div class="cadastro m-5 w-75 text-break">
+    <div class="telas p-2">
       <transition name="fade">
 
         <div v-if="tela == 0">
@@ -98,17 +98,13 @@ export default defineComponent({
   background-color: var(--bg);
   color: var(--texto);
   font-family: 'Roboto';
-  margin: 50px;
-  width: 75%;
-  word-wrap: break-word;
-}
+ }
 
 .telas {
   height: 200px;
   width: 400px;
   border: 1px solid rgb(221, 221, 221);
-  padding: 10px;
-}
+  }
 
 .fade-enter-active,
 .fade-leave-active {

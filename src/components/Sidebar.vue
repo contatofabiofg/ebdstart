@@ -103,13 +103,14 @@ export default defineComponent({
 });
 </script>
 <style scoped>
+
+
 .sidebar {
     min-width: 300px;
     min-height: 100vh;
     height: auto;
     background-color: var(--sidebarbg);
     transition: all 0.2s ease;
-    padding: 10px;
     
 }
 .openclose {
