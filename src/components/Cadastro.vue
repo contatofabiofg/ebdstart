@@ -1,7 +1,7 @@
 <template>
   <div class="cadastro m-5 w-75 text-break">
-    <div class="telas p-2">
-      <transition name="fade">
+    <div class="telas p-2"> 
+      <transition name="fade" mode="out-in">
 
         <div v-if="tela == 0">
           <label class="label" for="nome">Nome:</label>
@@ -51,7 +51,7 @@ export default defineComponent({
       endereco: "",
       telefone: "",
       tela: 0,
-      interval: 0
+    
     }
   },
   computed: {
@@ -64,29 +64,14 @@ export default defineComponent({
   methods: {
     voltar() {
       if (this.tela > 0) {
-        clearTimeout(this.interval);
-        let temp = this.tela;
-        this.tela = -1;
-        console.log("voltar");
-        this.interval = setTimeout(() => {
-          this.tela = temp;
-          this.tela--
-        }, 400);
-
-      }
+     this.tela--
+        }
+   
     },
     avancar() {
       if (this.tela < 3) {
-        clearTimeout(this.interval);
-        let temp = this.tela;
-        this.tela = -1;
-        console.log("avançar");
-        this.interval = setTimeout(() => {
-          this.tela = temp;
           this.tela++
-        }, 400);
-
-      }
+        }
     }
 
   }

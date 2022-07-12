@@ -1,18 +1,18 @@
 <template>
-    <div id="menuprincipal">
+    <div id="menuprincipal" class="d-flex flex-column justify-content-center align-items-center">
         {{ requisicaoteste("Menu Principal Carregado") }}
-        <BotaoTopico texto="Tópico" @click="mostrarlista1" />
+        <BotaoTopico texto="Tópico" imagem="book.png" setaid="topico1" :arrow="true" @click="mostrarlista1" />
         <transition name="menu1">
             <div v-if="topicos1" class="submenu">
                 <div v-for="(item, index) in postagem" :key="index">
-                    <router-link style="text-decoration: none; color: inherit;" to="item.path">
-                        <Botao texto="item.titulo" />
+                    <router-link style="text-decoration: none; color: inherit;" :to="item.path">
+                        <Botao :texto="item.titulo" />
                     </router-link>
                 </div>
             </div>
         </transition>
         
-        <BotaoTopico texto="Tópico2" @click="mostrarlista2" />
+        <BotaoTopico texto="Tópico2" imagem="book.png" setaid="topico2" :arrow="true" @click="mostrarlista2" />
         <transition name="menu2">
         <div v-if="topicos2">
 
@@ -24,7 +24,7 @@
 
         </div>
         </transition>
-        <BotaoTopico texto="Tópico2" @click="mostrarlista2" />
+        <BotaoTopico texto="Tópico2" imagem="book.png" setaid="topico3" :arrow="true" @click="mostrarlista2" />
         <transition name="menutemas">
         <div v-if="topicos2">
 
@@ -36,7 +36,7 @@
 
         </div>
         </transition>
-        <BotaoTopico texto="Exercícios" @click="mostrarexercicios" />
+        <BotaoTopico texto="Exercícios" imagem="book.png" setaid="topico4" :arrow="true" @click="mostrarexercicios" />
         <transition name="menuexercicios">
         <div v-if="menuexercicios">
             <div v-for="(item, index) in exercicio" :key="index">
@@ -47,7 +47,7 @@
         </div>
         </transition>
         <router-link style="text-decoration: none; color: inherit;" to="novapostagem">
-            <BotaoTopico texto="Nova Postagem" />
+            <BotaoTopico texto="Nova Postagem" imagem="" :arrow="false" />
         </router-link>
 
 
@@ -60,7 +60,7 @@ import Botao from "@/components/Botao.vue"
 import BotaoTopico from "@/components/BotaoTopico.vue"
 import postagem from "@/posts"
 import exercicio from "@/exercicios"
-import _, { forEach } from 'lodash';
+
 
 
 export default defineComponent({
@@ -117,6 +117,11 @@ export default defineComponent({
     --tamanhomenutemas: 0;
     --tamanhomenuexercicios: 0;
      }
+
+#menuprincipal {
+    width: 100%;
+    overflow:hidden;
+}
 .submenu {
     overflow: hidden
 }

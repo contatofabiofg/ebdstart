@@ -73,7 +73,7 @@ export default defineComponent({
 .post {
     background-color: var(--bg);
     color: var(--texto);
-    font-family: 'Roboto';
+    font-family: 'Montserrat';
     margin: 50px;
     width: 75%;
     word-wrap: break-word;

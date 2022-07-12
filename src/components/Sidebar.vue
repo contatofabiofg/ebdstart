@@ -1,6 +1,8 @@
 <template>
-    <div class="sidebar" :class="{ 'sidebarfechado': sidebarvisible }">
+    <div class="sidebar d-flex flex-column align-items-center" :class="{ 'sidebarfechado': sidebarvisible }">
+    <div class="openclosearea">
         <Openclose @click="sidebartoggle" :info="sidebarvisible" :key="contadorOpenClose" />
+        </div>
         <Logo />
         <DarkMode @click="mudarmodo()" :texto="`${textodobotao}`"/>
         <div class="campoinput">
@@ -104,6 +106,9 @@ export default defineComponent({
 </script>
 <style scoped>
 
+.openclosearea {
+    width: 100%
+}
 
 .sidebar {
     min-width: 300px;
@@ -113,12 +118,7 @@ export default defineComponent({
     transition: all 0.2s ease;
     
 }
-.openclose {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    background-color: gray;
-}
+
 .sidebarfechado {
     width: 0%;
     min-width: 0px;
@@ -132,6 +132,7 @@ export default defineComponent({
     border: none;
     position: relative;
     margin-bottom: 10px;
+    width: 250px;
 }
 .input:focus {
      background-color: var(--bg);

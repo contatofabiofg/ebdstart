@@ -20,14 +20,16 @@ export default defineComponent({
 <style scoped>
 
 .botao {
-    background-color: var(--botaocor);
-    color: var(--texto);
-    height: 30px;
-    margin-left: 30px;
-    font-size: 11px;
-    cursor: pointer;
-    border-bottom: 1px solid gray;
-    
+  color: var(--textosidebar);
+  width: 260px;
+  max-width: 100%;
+  height: 30px;
+  font-family: "Montserrat";
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 5px;
    }
 .botao:hover {
     background-color: var(--botaocorover);

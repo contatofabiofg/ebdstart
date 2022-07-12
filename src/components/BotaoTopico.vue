@@ -1,33 +1,51 @@
 <template>
-  <div @click="mudarsetinha"
-    class="botaotopico w-100 font-weight-bold d-flex flex-row justify-content-between align-items-center cursor-pointer overflow-hidden">
-    <div class="nome d-flex flex-row justify-content-around align-items-center">
-      <img src="../../public/book.png" class="menuicon" />
-      <strong>{{ texto! }}</strong>
+  <div @click="mudarsetinha(`${setaid}`)" class="botaotopico font-weight-bold d-flex flex-row justify-content-between align-items-center cursor-pointer overflow-hidden">
+    <div class="nome d-flex flex-row justify-content-center align-items-center">
+       <div id="menuicon" :style="{ backgroundImage: 'url(' + imagem + ')' }"></div>
+        <div>{{ texto! }}</div>
     </div>
     
-    <div class="menuarrow" :class="{arrowvirada: seta}"></div>
+    <div :class="[`${setaid}`, arrow? 'menuarrow' : 'semarrow']"></div>
     
   </div>
 
 </template>
 
+
+
 <script lang="ts">
 import { defineComponent } from 'vue';
+import gsap from "gsap";
+
 
 export default defineComponent({
   name: 'BotaoTopicoC',
   data() {
     return {
-      seta: false
+      seta: false,
+      
+      
     }
   },
   props: {
     texto: String,
+    imagem: String,
+    setaid: String,
+    arrow: Boolean
   },
+   
   methods: {
-    mudarsetinha() {
-      this.seta = !this.seta
+    mudarsetinha(estaseta: string) {
+
+      if (!this.seta) {
+        gsap.to(`.${estaseta}`, {rotation: 90, duration: 0.3});
+        this.seta = !this.seta
+      } else {
+       gsap.to(`.${estaseta}`, {rotation: 0, duration: 0.3}); 
+       this.seta = !this.seta
+      }
+      
+      //
     }
   }
 });
@@ -35,15 +53,21 @@ export default defineComponent({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.botaotopico {
-  background-color: var(--botaocor);
-  color: var(--texto);
-  height: 70px;
-  font-family: Arial;
-  font-size: 14px;
-  cursor: pointer;
-  border-bottom: 1px solid gray;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.botaotopico {
+  /*background-color: var(--botaocor);*/
+  color: var(--textosidebar);
+  width: 260px;
+  
+  height: 40px;
+  font-family: "Montserrat";
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 5px;
 }
 
 .botaotopico:hover {
@@ -54,12 +78,14 @@ export default defineComponent({
   margin-left: 10px
 }
 
-.menuicon {
+#menuicon {
   width: 20px;
   height: 20px;
   background-position: center;
   background-size: cover;
   transform: 0, 2s all ease;
+  margin-right: 10px;
+  filter: invert(100%);
 }
 
 .menuarrow {
@@ -70,13 +96,13 @@ export default defineComponent({
   background-position: center;
   background-size: cover;
   transition: 0,5s all ease;
-}
-.arrowvirada {
-  transform: rotate(90deg);
+  filter: invert(100%);
 }
 
-img {
-  margin-right: 5px;
+.semarrow {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
 }
 
 </style>

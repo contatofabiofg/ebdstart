@@ -1,5 +1,5 @@
 <template>
-<div class="dark my-1 mw-100 overflow-hidden d-flex flex-column justify-content-center align-items-center"  >{{texto}}</div>
+<div class="dark mw-100 overflow-hidden d-flex flex-column justify-content-center align-items-center"  >{{texto}}</div>
 </template>
 
 <script lang="ts">
@@ -24,6 +24,8 @@ export default defineComponent({
     width: 100px;
     font-size: 11px;
     cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 10px;
     
 }
 .dark:hover {

@@ -20,14 +20,15 @@ export default defineComponent({
     transform: rotateY(180deg);    
 }
 .openclose {
-    width: 30px;
-    height: 30px;    
+    width: 50px;
+    height: 50px;    
     background-image: url("../../public/openclose.png");
     background-position: center;
     background-size: cover;
     position: relative;
     float: right;
-    right: -35px;
+    right: -25px;
+    top: 10px;
     transform: 0,2s all ease;
 }
 </style>
