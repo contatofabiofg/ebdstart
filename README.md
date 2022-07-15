@@ -1,6 +1,9 @@
 ## EBDStart Vue.js
 
-Olá! Nesse repositório estou registrando o código que estou desenvolvendo utilizando o Vue.js; A aplicação está estruturada para gerar rotas e menus dinâmicamente; Há uma funcionalidade protótipa de um chatbot.
+![ebdstart readme art copy](https://user-images.githubusercontent.com/84576249/179308553-f0308643-7f1a-4997-95c0-ac746bf4a464.png)
+
+Olá! Nesse repositório estou registrando o código que estou desenvolvendo utilizando o Vue.js; A aplicação está estruturada para gerar rotas e menus dinâmicamente; Há 
+uma funcionalidade protótipa de um chatbot.
 
 ## 🔨 Funcionalidades do projeto
 
