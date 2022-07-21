@@ -1,24 +1,39 @@
-# ebdstart
+## EBDStart Vue.js
 
-## Project setup
-```
-npm install
-```
+Olá! Nesse repositório estou registrando o código que estou desenvolvendo utilizando o Vue.js; A aplicação está estruturada para gerar rotas e menus dinâmicamente; Há uma funcionalidade protótipa de um chatbot.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 🔨 Funcionalidades do projeto
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Menu: submenus gerados de maneira dinâmica com base num json; 
+- Lazy Search Engine 
 
-### Lints and fixes files
-```
-npm run lint
-```
+## ✔️ Técnicas e tecnologias utilizadas
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- `HTML`
+- `CSS`
+- `Javascript`
+  - `Variáveis e operadores`
+  - `Funções`
+  - `if-Else, While e ForEach`
+  - `Métodos de Array`
+- `Vue.js 3`
+  - `Single File Components`
+  - `v-for`
+  - `v-bind`
+  - `v-if`
+  - `vue-router`
+- `Typescript`
+
+## 📁 Acesso ao projeto
+
+Em breve, um link do projeto em funcionamento
+
+## 🛠️ Abrir e rodar o projeto
+
+- Clone esse repositório
+- para instar, utilize o código: npm install
+- Para rodar o projeto: npm run serve
+
+## 📚 Mais informações 
+
+Faça contato! Me envie um e-mail sobre o que achou: contatofabiofg@hotmail.com

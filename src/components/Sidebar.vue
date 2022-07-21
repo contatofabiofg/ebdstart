@@ -1,7 +1,7 @@
 <template>
     <div class="sidebar d-flex flex-column align-items-center" :class="{ 'sidebarfechado': sidebarvisible }">
     <div class="openclosearea">
-        <Openclose @click="sidebartoggle" :info="sidebarvisible" :key="contadorOpenClose" />
+        <Openclose @click="sidebartoggle" />
         </div>
         <Logo />
         <DarkMode @click="mudarmodo()" :texto="`${textodobotao}`"/>

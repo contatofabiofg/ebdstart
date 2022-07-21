@@ -20,7 +20,7 @@ export default defineComponent({
      width: 70px;
      height: 70px;
      margin: 20px;
-     background-color: white;
+     background-color: rgb(0, 0, 0);
      
 }
 </style>

@@ -16,7 +16,8 @@
 import { defineComponent } from 'vue';
 import postagem from "@/posts";
 import { jsPDF } from "jspdf";
-import datalogo from "@/assets/datalogo"
+import datalogo from "@/assets/datalogo";
+import { popup } from "@/functions/popup"
 
 
 export default defineComponent({
@@ -26,10 +27,17 @@ export default defineComponent({
         return {
             url: window.location.pathname,
             postagem,
-            datalogo
+            datalogo,
         }
     },
+   
+    mounted() {
+        popup()
+
+    },
     methods: {
+        popup,
+
         topo(): void {
             window.scrollTo(0, 0)
         },

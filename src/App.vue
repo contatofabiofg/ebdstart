@@ -1,16 +1,15 @@
 <template>
 <main :class="{'mododark': mododarkative, 'modoclaro': !mododarkative}">
-  <div class="painel d-flex flex-row">
-    <Sidebar @trocarModo="alterarmodo()" />
-    <router-view />
+  <div class="painel d-flex flex-row justify-content-center align-items-center">
+      <router-view />
   </div>
-  <Chatbox />
+
   </main>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Sidebar from "@/components/Sidebar.vue"
-import Chatbox from "@/components/Chatbox.vue"
+
+
 
 export default defineComponent({
   name: 'App',
@@ -20,8 +19,8 @@ export default defineComponent({
     }
   },
   components: {
-    Sidebar,
-    Chatbox
+ 
+
   },
   methods: {
     alterarmodo() {
