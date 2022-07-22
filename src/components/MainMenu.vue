@@ -2,7 +2,7 @@
     <div class="mainmenu d-flex flex-row flex-wrap justify-content-center align-items-center">
         {{ requisicaoteste("Menu Principal Carregado") }}
         <router-link to="/velhotestamento">
-            <TopicButton2 title="Título de Teste" color="rgb(90, 86, 64)" image="velhotestamento.jpg" />
+            <TopicButton2 title="Título de Teste" color="rgb(90, 86, 64)" image="at.jpg" />
         </router-link>
         <router-link to="/velhotestamento">
             <TopicButton2 title="Título de Teste2" color="rgb(120, 86, 64)" image="nt.jpg" />
