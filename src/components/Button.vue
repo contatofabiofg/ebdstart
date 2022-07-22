@@ -1,5 +1,5 @@
 <template>
-<div class="botao w-60  d-flex flex-column justify-content-center align-items-center cursor-pointer overflow-hidden" >{{texto!.toUpperCase()}}</div>
+<div class="button w-60  d-flex flex-column justify-content-center align-items-center cursor-pointer overflow-hidden" >{{text!.toUpperCase()}}</div>
 </template>
 
 <script lang="ts">
@@ -8,7 +8,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'BotaoC',
   props: {
-    texto: String,
+    text: String,
     path: String
   },
  
@@ -19,7 +19,7 @@ export default defineComponent({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.botao {
+.button {
   color: var(--textosidebar);
   width: 260px;
   max-width: 100%;
@@ -31,7 +31,7 @@ export default defineComponent({
   overflow: hidden;
   margin-bottom: 5px;
    }
-.botao:hover {
+.button:hover {
     background-color: var(--botaocorover);
 }
 

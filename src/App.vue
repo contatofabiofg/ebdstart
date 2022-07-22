@@ -1,7 +1,7 @@
 <template>
 <main :class="{'mododark': mododarkative, 'modoclaro': !mododarkative}">
   <div class="painel d-flex flex-row justify-content-center align-items-center">
-      <router-view />
+      <router-view/>
   </div>
 
   </main>
@@ -33,8 +33,12 @@ export default defineComponent({
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 main {
-  background-color: var(--bg);
-}
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../public/wall1.png");
+  background-position: center;
+  background-size: cover;
+ }
 
 .modoclaro {
   --bg: white;

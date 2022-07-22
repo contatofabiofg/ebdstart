@@ -1,9 +1,9 @@
 <template>
-  <div class="botaotopico font-weight-bold d-flex flex-column justify-content-center align-items-center cursor-pointer overflow-hidden" :style="`background-color:${cor}` ">
+  <div class="topicbutton font-weight-bold d-flex flex-column justify-content-center align-items-center cursor-pointer overflow-hidden" :style="`background-color:${color}` ">
  
     
-    <div class="nome d-flex flex-row justify-content-center align-items-center" >
-        <div>{{titulo}}</div>
+    <div class="name d-flex flex-row justify-content-center align-items-center" >
+        <div>{{title}}</div>
     </div>
     
     
@@ -20,6 +20,7 @@ import { defineComponent } from 'vue';
 
 
 
+
 export default defineComponent({
   name: 'BotaoTopicoC',
   data() {
@@ -30,8 +31,8 @@ export default defineComponent({
     }
   },
   props: {
-    titulo: String,
-    cor: String
+    title: String,
+    color: String
   },
    
   methods: {
@@ -45,25 +46,26 @@ export default defineComponent({
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.botaotopico {
+.topicbutton {
   /*background-color: var(--botaocor);*/
-  min-width: 170px;
+  min-width: 200px;
   height: 50px;
   font-family: "Montserrat";
   font-size: 16px;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 7px;
   overflow: hidden;
   margin: 5px;
   transition: 0.3s ease all;
   color: white;
+  box-shadow: -3px 3px 3px rgb(168, 168, 168);
 }
 
-.botaotopico:hover {
-  background-color: var(--botaocorover);
+.topicbutton:hover {
+ transform: scale(103%);
 
 }
-.nome {
+.name {
   margin-left: 10px
 }
 

@@ -2,11 +2,11 @@
 
         {{requisicaoteste("Menu Busca Carregado")}}
            
-            <div v-for="(item, index) in postagem" :key="index"> 
+            <div v-for="(item, index) in posts" :key="index"> 
                 
-                <router-link v-if="item.titulo.toLowerCase().startsWith(buscar!.toLowerCase()) && buscar! !== ''" style="text-decoration: none; color: inherit;"
+                <router-link v-if="item.title.toLowerCase().startsWith(search!.toLowerCase()) && search! !== ''" style="text-decoration: none; color: inherit;"
                     :to="item.path" >
-                    <Botao :texto="item.titulo" />
+                    <Button :texto="item.title" />
                 </router-link>
                 
                 
@@ -15,8 +15,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Botao from "@/components/Botao.vue"
-import postagem from "@/posts"
+import Button from "@/components/Button.vue"
+import posts from "@/posts"
 import _ from 'lodash';
 
 
@@ -24,12 +24,12 @@ export default defineComponent({
   name: 'MenuBuscaC',
   data() {
     return {
-            postagem,
+            posts,
             timeout: 0,
     }
   },
 props: {
-    buscar: String
+    search: String
     
   },
   
@@ -42,7 +42,7 @@ props: {
   }, 
   components: {
     
-    Botao,
+    Button,
     
   }
  

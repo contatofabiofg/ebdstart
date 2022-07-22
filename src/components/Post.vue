@@ -1,12 +1,23 @@
 <template>
-    <div class="post" v-for="(item, index) in postagem" :key="index">
 
-        <div v-if="item.path == url">
-            <h1>{{ item.titulo }}</h1>
-            <h2>{{ item.subtitulo }}</h2>
-            <p v-html="item.texto"></p>
+
+    <div v-for="(item, index) in posts" :key="index">
+
+        <div class="postarea" v-if="item.path == url">
+            <div>
+                <router-link to="/">home</router-link>
+                <div class="space d-inline">•</div>
+                <router-link :to="`/` + getcategoryurl(url)">{{ item.category }}</router-link>
+                <div class="space d-inline">•</div>
+                <div class="d-inline">{{ item.title }}</div>
+            </div>
+
+
+            <h1>{{ item.title }}</h1>
+            <h2>{{ item.subtitle }}</h2>
+            <p v-html="item.text"></p>
             <div class="topo" @click="topo">Voltar para o topo</div>
-            <div class="imprimir" @click="imprimir(item.titulo, item.subtitulo, item.texto)">Imprimir</div>
+            <div class="imprimir" @click="imprimir(item.title, item.subtitle, item.text)">Imprimir</div>
         </div>
 
     </div>
@@ -14,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import postagem from "@/posts";
+import posts from "@/posts";
 import { jsPDF } from "jspdf";
 import datalogo from "@/assets/datalogo";
 import { popup } from "@/functions/popup"
@@ -26,24 +37,28 @@ export default defineComponent({
     data() {
         return {
             url: window.location.pathname,
-            postagem,
+            posts,
             datalogo,
         }
     },
-   
+
     mounted() {
         popup()
 
     },
     methods: {
         popup,
+        getcategoryurl(url: string): string {
+            let category = url.split("/");
+            return category[1]
+        },
 
         topo(): void {
             window.scrollTo(0, 0)
         },
         imprimir(titulo: string, subtitulo: string, texto: string): void {
             const doc = new jsPDF("p", "px", "a4");
-           
+
             var imgData = datalogo[0];
 
             doc.addImage(imgData, 'JPEG', 200, 20, 50, 50)
@@ -54,21 +69,21 @@ export default defineComponent({
 
             doc.setFont('times', "italic");
             doc.setFontSize(15);
-            doc.text(subtitulo, 180, 90, {maxWidth: 170});
+            doc.text(subtitulo, 180, 90, { maxWidth: 170 });
 
             doc.html(`<div style="width:1350px; font-size:20px">${texto}</div>`, {
                 x: 20,
                 y: 120,
-                
+
                 html2canvas: {
                     scale: (doc.internal.pageSize.width - 40) / document.body.scrollWidth
                 },
-                
+
                 callback: function (doc) {
-                doc.autoPrint();
-                doc.output('dataurlnewwindow');
-            }
-        })
+                    doc.autoPrint();
+                    doc.output('dataurlnewwindow');
+                }
+            })
 
         }
     }
@@ -78,17 +93,27 @@ export default defineComponent({
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
 
-.post {
-    background-color: var(--bg);
+.postarea {
+
     color: var(--texto);
     font-family: 'Montserrat';
-    margin: 50px;
-    width: 75%;
+    margin: auto;
+    margin-top: 40px;
+    width: 800px;
     word-wrap: break-word;
+}
+.space {
+    margin: 0px 10px;
+}
+a {
+    text-decoration: none;
+    color: rgb(188, 71, 73);
+    font-weight: bold;
 }
 
 h1 {
     font-weight: 900;
+    margin-top: 20px;
 }
 
 h2 {
@@ -101,7 +126,8 @@ p {
     margin-top: 20px;
 }
 
-.topo, .imprimir {
+.topo,
+.imprimir {
     font-weight: bold;
     cursor: pointer
 }

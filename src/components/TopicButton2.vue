@@ -1,12 +1,12 @@
 <template>
-  <div @mouseover="animate" @mouseout="animate" class="botaotopico2 font-weight-bold d-flex flex-column justify-content-between align-items-center cursor-pointer overflow-hidden">
-    <div class="imagembotao" :class="{'animateclass': animateimage}" :style="{ backgroundImage: 'url(' + image + ')' }">
+  <div @mouseover="animate" @mouseout="animate" class="topicbutton2 font-weight-bold d-flex flex-column justify-content-between align-items-center cursor-pointer overflow-hidden">
+    <div class="imagebutton" :class="{'animateclass': animateimage}" :style="{ backgroundImage: 'url(' + image + ')' }">
 
     </div>
     
     
-    <div class="nome d-flex flex-row justify-content-center align-items-center" :style="`background-color:${cor}` ">
-        <div>{{titulo}}</div>
+    <div class="name d-flex flex-row justify-content-center align-items-center" :style="`background-color:${color}` ">
+        <div>{{title}}</div>
     </div>
     
     
@@ -31,8 +31,8 @@ export default defineComponent({
     }
   },
   props: {
-    titulo: String,
-    cor: String,
+    title: String,
+    color: String,
     image: String
 
   },
@@ -64,36 +64,37 @@ export default defineComponent({
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-.botaotopico2 {
+.topicbutton2 {
   /*background-color: var(--botaocor);*/
-  min-width: 170px;
-  min-height: 170px;
+  min-width: 200px;
+  min-height: 350px;
   font-family: "Montserrat";
   font-size: 16px;
   cursor: pointer;
-  border-radius: 15px;
+  border-radius: 7px;
   overflow: hidden;
   margin: 5px;
   transition: 0.3s ease all;
+  box-shadow: -3px 3px 3px rgb(168, 168, 168);
 }
 
-.botaotopico2:hover {
-  transform: scale(103%);
+.topicbutton2:hover {
+  transform: scale(101%);
 
 }
 
-.imagembotao {
+.imagebutton {
     width: 100%;
-   height: 120px;
+   height: 280px;
    background-position: center;
   background-size: cover;
   z-index: 0;
 }
 
-.nome {
+.name {
     color: white;
     width: 100%;
-    height: 50px;
+    height: 70px;
     z-index: 1;
 }
 .animateclass {

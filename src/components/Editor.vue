@@ -1,12 +1,16 @@
 <template>
 <div class="areaeditor m-5">
-  <div class="texto">Título</div>
-  <input type="text" v-model="titulo"/>
-  <div class="texto">Subtítulo</div>
-  <input type="text" v-model="subtitulo"/>
-  <div class="texto">Endereço</div>
+  <div class="text">Título</div>
+  <input type="text" v-model="title"/>
+  <div class="text">Subtítulo</div>
+  <input type="text" v-model="subtitle"/>
+  <div class="text">Cor</div>
+  <input type="text" v-model="color"/>
+    <div class="text">Categoria</div>
+  <input type="text" v-model="category"/>
+  <div class="text">Endereço</div>
   <input type="text" v-model="path"/>
-  <div class="texto">Texto</div>
+  <div class="text">Texto</div>
 <QuillEditor v-model:content="html" contentType="html" theme="snow" />
   <div class="save d-inline-block p-2 m-2" @click="save()">Salvar</div>
 </div>
@@ -19,7 +23,7 @@
 
 import { QuillEditor } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
-import postagem from "@/posts";
+import posts from "@/posts";
 import { defineComponent } from 'vue';
 
 
@@ -27,11 +31,13 @@ export default defineComponent({
   name: 'editorC',
   data() {
     return { 
-      titulo: "",
-      subtitulo: "",
+      title: "",
+      subtitle: "",
       path: "",
       html: "",
-      postagem
+      color: "",
+      category: "",
+      posts
   }},
   components: {
     QuillEditor,
@@ -41,12 +47,14 @@ export default defineComponent({
     save() {
         var post = {
         path: this.path,
-        titulo: this.titulo,
-        subtitulo: this.subtitulo,
-        texto: `${this.html}`,
-        imagem: ""
+        color: this.color,
+        title: this.title,
+        category: this.category,
+        subtitle: this.subtitle,
+        text: `${this.html}`,
+        image: ""
       }
-      this.postagem.push(post)
+      this.posts.push(post)
     }
   }
 });
@@ -59,7 +67,7 @@ export default defineComponent({
   color: var(--texto);
   
 }
-.texto {
+.text {
   font-weight: bold;
   margin-bottom: 5px;
   margin-top: 10px;

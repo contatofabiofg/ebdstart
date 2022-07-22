@@ -21,8 +21,8 @@ import postagem from "@/posts";
 import Logo from "@/components/Logo.vue";
 import DarkMode from "@/components/DarkMode.vue";
 import _ from 'lodash';
-import MenuPrincipal from './MenuPrincipal.vue';
-import MenuBusca from './MenuBusca.vue';
+import MenuPrincipal from './MainMenu.vue';
+import MenuBusca from './SearchMenu.vue';
 
 export default defineComponent({
     name: 'SidebarC',

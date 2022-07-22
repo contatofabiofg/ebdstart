@@ -1,39 +1,28 @@
 <template>
-    <div id="menuprincipal" class="d-flex flex-row flex-wrap justify-content-center align-items-center">
-        {{ requisicaoteste("Menu Principal Carregado") }}
-        <router-link to="at">
-            <BotaoTopico2 titulo="Título de Teste" cor="rgb(90, 86, 64)" image="at.jpg" />
+    <div class="submenu d-flex flex-row flex-wrap">
+      <transition-group @before-enter="beforeEnter" @enter="enter" appear >
+      <div v-for="(item, index) in posts" :key="index" :data-index="index"> 
+      
+        <router-link :to="item.path">
+            <SmallButton :title="item.title" :color="item.color" image="book.png"/>
         </router-link>
-        <router-link to="at">
-            <BotaoTopico2 titulo="Título de Teste2" cor="rgb(120, 86, 64)" image="nt.jpg" />
-        </router-link>
-        <router-link to="at">
-            <BotaoTopico2 titulo="Título de Teste3" cor="rgb(40, 86, 64)" image="tree.jpg" />
-        </router-link>
-        <router-link to="at">
-            <BotaoTopico2 titulo="Título de Teste4" cor="rgb(90, 6, 64)" image="tree.jpg" />
-        </router-link>
-
-        <BotaoTopico titulo="Dicionário" cor="rgb(120, 86, 64)"/>
-        <BotaoTopico titulo="Mídias" cor="rgb(120, 86, 64)"/>
-        <BotaoTopico titulo="Orientações" cor="rgb(120, 86, 64)"/>
-        <BotaoTopico titulo="Contribua" cor="rgb(120, 86, 64)"/>
-
-
+       
+        </div> 
+        </transition-group>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import BotaoTopico from "@/components/BotaoTopico.vue"
-import BotaoTopico2 from "@/components/BotaoTopico2.vue"
-import postagem from "@/posts"
+import SmallButton from "@/components/SmallButton.vue"
+import posts from "@/posts"
 import exercicio from "@/exercicios"
+import gsap from "gsap"
 
 
 
 export default defineComponent({
-    name: 'MenuPrincipalC',
+    name: 'SubmenuC',
     data() {
         return {
 
@@ -41,20 +30,34 @@ export default defineComponent({
             topicos2: false,
             topicos3: false,
             menuexercicios: false,
-            postagem,
+            posts,
             exercicio,
             timeout: 0,
+            time: ""
 
         }
     },
-    mounted() {
-        document.documentElement.style.setProperty('--tamanhomenu1', `${(31 * (this.postagem.length + 1))}px`);
-        document.documentElement.style.setProperty('--tamanhomenu2', `${(31 * (this.postagem.length + 1))}px`);
-        document.documentElement.style.setProperty('--tamanhotemas', `${(31 * (this.postagem.length + 1))}px`);
-        document.documentElement.style.setProperty('--tamanhoexercicios', `${(31 * (this.exercicio.length + 1))}px`);
-    },
-
+    
     methods: {
+        beforeEnter(el: HTMLElement): void {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(-30px)"
+        },
+        enter(el: HTMLElement, done: any):void {
+            if (el.dataset.index) {
+            this.time = el.dataset.index
+            }
+          
+            gsap.to(el, {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                onComplete: done,   
+                delay: parseInt(this.time) * 0.1
+
+            })
+        },
+
         requisicaoteste(texto: string): void {
             console.log(texto)
         },
@@ -70,9 +73,8 @@ export default defineComponent({
 
     },
     components: {
-        BotaoTopico,
-                BotaoTopico2
-    }
+        SmallButton,
+            }
 
 });
 
@@ -80,21 +82,14 @@ export default defineComponent({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-:root {
-    --tamanhomenu1: 31px;
-    --tamanhomenu2: 0;
-    --tamanhomenutemas: 0;
-    --tamanhomenuexercicios: 0;
-}
-
-#menuprincipal {
-    width: 450px;
-    overflow: hidden;
-}
 
 .submenu {
+    
+    width: 700px;
+    margin-top: 20px;
     overflow: hidden
 }
+
 
 .menu1-enter-active {
     animation: menu1-in 0.5s;

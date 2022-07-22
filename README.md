@@ -1,20 +1,8 @@
 ## EBDStart Vue.js
 
-<<<<<<< HEAD
-Olá! Nesse repositório estou registrando o código que estou desenvolvendo utilizando o Vue.js; A aplicação está estruturada para gerar rotas e menus dinâmicamente; Há uma funcionalidade protótipa de um chatbot.
-
-## 🔨 Funcionalidades do projeto
-
-- Menu: submenus gerados de maneira dinâmica com base num json; 
-- Lazy Search Engine 
-
-## ✔️ Técnicas e tecnologias utilizadas
-
-=======
 ![ebdstart readme art copy](https://user-images.githubusercontent.com/84576249/179308553-f0308643-7f1a-4997-95c0-ac746bf4a464.png)
 
-Olá! Nesse repositório estou registrando o código que estou desenvolvendo utilizando o Vue.js; A aplicação está estruturada para gerar rotas e menus dinâmicamente; Há 
-uma funcionalidade protótipa de um chatbot.
+Olá! Nesse repositório estou registrando o código que estou desenvolvendo utilizando o Vue.js; A aplicação está estruturada para gerar rotas e menus dinâmicamente; Há uma funcionalidade protótipa de um chatbot.
 
 ## 🔨 Funcionalidades do projeto
 
@@ -22,9 +10,9 @@ uma funcionalidade protótipa de um chatbot.
 - Lazy Search Engine 
 - Chatbot
 
+
 ## ✔️ Técnicas e tecnologias utilizadas
 
->>>>>>> d8d4cd9c8d903d6eaf68a8edf2e2f500c17b08df
 - `HTML`
 - `CSS`
 - `Javascript`
@@ -47,7 +35,7 @@ Em breve, um link do projeto em funcionamento
 ## 🛠️ Abrir e rodar o projeto
 
 - Clone esse repositório
-- para instar, utilize o código: npm install
+- para instalarr, utilize o código: npm install
 - Para rodar o projeto: npm run serve
 
 ## 📚 Mais informações 

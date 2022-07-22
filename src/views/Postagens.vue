@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  
     <Post :key="componentKey"/>
-  </div>
+  
 </template>
 
 <script lang="ts">
@@ -33,7 +33,8 @@ export default defineComponent({
 });
 </script>
 <style>
-.home {
-  max-width: 75%;
+.postarea {
+ width: 750px;
+ margin-left: 200px;
 }
 </style>

@@ -1,25 +1,32 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Postagens from '../views/Postagens.vue'
+import Select from '../views/Select.vue'
 import Home from "@/views/Home.vue"
 import Exercicios from "@/views/Exercicios.vue"
 import NovaPostagem from "@/views/NovaPostagem.vue"
-
+import MainMenu from "@/components/MainMenu.vue"
+import SubMenu from "@/components/SubMenu.vue"
+import Post from "@/components/Post.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'home',
-    component: Home
+    component: Home,
+    children: [
+      {path: "/",
+      component: MainMenu
+      },
+      {
+        path: "/:submenu",
+        component: SubMenu
+      }
+    ]
+
   },
+  
   {
-    path: '/:posts',
-    name: 'posts',
-    component: Postagens
-  },
-  {
-    path: '/exercicios/:exercicios',
-    name: 'exercicios',
-    component: Exercicios
+    path: '/velhotestamento/:page',
+    name: 'page',
+    component: Post
   },
   {
     path: '/novapostagem',
