@@ -66,8 +66,8 @@ export default defineComponent({
 
 .topicbutton2 {
   /*background-color: var(--botaocor);*/
-  min-width: 200px;
-  min-height: 350px;
+  width: 175px;
+  height: 250px;
   font-family: "Montserrat";
   font-size: 16px;
   cursor: pointer;
@@ -119,6 +119,12 @@ export default defineComponent({
     }
 }
 
+@media (max-width: 500px) {  
+  .topicbutton2 {
+  height: 180px;
+  width: 140px;
+}
+}
 
 
 

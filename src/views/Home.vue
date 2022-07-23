@@ -2,8 +2,8 @@
   <div class="home d-flex flex-column justify-content-center align-items-center">
       <h1>e ai, o que vamos estudar hoje?</h1>
     <div class="inputarea d-flex flex-row justify-content-center align-items-center">
-      <input class="form-control" placeholder="Encontrar" v-model="busca" />
-      <div class="searchbutton">Pesquisar</div>
+      <input class="form-control" placeholder="Digite o que você procura" v-model="busca" />
+      
     </div>
     <router-view/>
       </div>
@@ -50,6 +50,8 @@ export default defineComponent({
 }
 
 h1 {
+max-width: 90vw;
+text-align: center;
 font-family: "Montserrat";
 font-weight: bold;
 color: rgb(70, 70, 70);
@@ -57,6 +59,7 @@ color: rgb(70, 70, 70);
 
 input {
   width: 600px;
+  max-width: 80vw;
   margin: 10px 0px;
   box-shadow: -5px 5px 25px rgb(163, 163, 163);
 }

@@ -100,6 +100,7 @@ export default defineComponent({
     margin: auto;
     margin-top: 40px;
     width: 800px;
+    max-width: 90vw;
     word-wrap: break-word;
 }
 .space {

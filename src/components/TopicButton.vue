@@ -48,7 +48,7 @@ export default defineComponent({
 
 .topicbutton {
   /*background-color: var(--botaocor);*/
-  min-width: 200px;
+  width: 175px;
   height: 50px;
   font-family: "Montserrat";
   font-size: 16px;
@@ -69,6 +69,11 @@ export default defineComponent({
   margin-left: 10px
 }
 
+@media (max-width: 500px) {  
+  .topicbutton {
+   width: 140px;
+}
+}
 
 
 </style>

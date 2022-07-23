@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Select from '../views/Select.vue'
 import Home from "@/views/Home.vue"
 import Exercicios from "@/views/Exercicios.vue"
+import Postagens from "@/views/Postagens.vue"
 import NovaPostagem from "@/views/NovaPostagem.vue"
 import MainMenu from "@/components/MainMenu.vue"
 import SubMenu from "@/components/SubMenu.vue"
@@ -26,7 +27,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/velhotestamento/:page',
     name: 'page',
-    component: Post
+    component: Postagens
   },
   {
     path: '/novapostagem',

@@ -86,6 +86,7 @@ export default defineComponent({
 .submenu {
     
     width: 700px;
+    max-width: 90vw;
     margin-top: 20px;
     overflow: hidden
 }

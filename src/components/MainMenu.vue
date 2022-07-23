@@ -88,7 +88,8 @@ export default defineComponent({
 }
 
 .mainmenu {
-    width: 1000px;
+    width: 740px;
+    max-width: 80%;
     overflow: hidden;
 }
 
