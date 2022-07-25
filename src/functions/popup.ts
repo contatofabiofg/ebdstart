@@ -34,6 +34,7 @@ export const popup = function() {
             //stylyng and edditing the page element and getting his position
             element.style.fontWeight = "bold";
             element.style.cursor = "pointer";
+            element.style.color = "rgb(188, 71, 73)"
             element.addEventListener("mouseover", function() {
             const position = element.getBoundingClientRect();
             console.log(position.left);
@@ -46,12 +47,14 @@ export const popup = function() {
             if (!document.querySelector(".popup") && window.innerWidth > 1000) {
             element.addEventListener("mouseout", closepopup);
             const popup = document.createElement("div");
-            const titulo = document.createElement("h4");
+            const titulo = document.createElement("h5");
+            titulo.style.fontSize = "14px";
             titulo.innerHTML = searchedItem?.titulo;
             const texto = document.createElement("p");
+            texto.style.fontSize = "10px";
             texto.innerHTML = searchedItem?.texto;
             popup.classList.add("popup");
-            popup.setAttribute("style", `width: 300px; height: 200px; padding: 10px; background-color: white; box-shadow: -5px 5px 25px gray; border-radius: 10px; position: fixed; left: ${position.left}px; top: ${position.top + 20}px; word-wrap: break-word`);
+            popup.setAttribute("style", `width: 150px; height: auto; padding: 10px; background-color: white; box-shadow: -5px 5px 15px rgb(180,180,180); border-radius: 5px; position: fixed; left: ${position.left}px; top: ${position.top + 20}px; word-wrap: break-word`);
             popup.setAttribute("onMouseOver", "");
             popup.appendChild(titulo);
             popup.appendChild(texto);
@@ -60,7 +63,7 @@ export const popup = function() {
         } else if (!document.querySelector(".popup") && window.innerWidth < 1000) {
             const darkscreen = document.createElement("div");
             darkscreen.classList.add("darkscreen");
-            darkscreen.setAttribute("style", `min-width: 100vw; min-height: ${height}px; background-color: black; position: fixed; left: 0; top: 0; opacity: 0.7; z-index: 3`);
+            darkscreen.setAttribute("style", `min-width: 100vw; min-height: ${height + 20}px; background-color: black; position: fixed; left: 0; top: 0; opacity: 0.7; z-index: 3`);
             darkscreen.addEventListener("click", closepopup);
             document.querySelector("body")?.setAttribute("style", "overflow: hidden");
             document.querySelector("body")?.appendChild(darkscreen);
@@ -71,7 +74,7 @@ export const popup = function() {
             const texto = document.createElement("p");
             texto.innerHTML = searchedItem?.texto;
             popup.classList.add("popup");
-            popup.setAttribute("style", `width: 300px; height: 300px; padding: 10px; background-color: white; border-radius: 10px; position: absolute; margin: auto; top: 0; right: 0; bottom: 0; left: 0; word-wrap: break-word; z-index: 4`);
+            popup.setAttribute("style", `width: 250px; height: fit-content; padding: 10px; background-color: white; border-radius: 10px; position: fixed; margin: auto; top: 0; right: 0; bottom: 0; left: 0; word-wrap: break-word; z-index: 4`);
             popup.appendChild(titulo);
             popup.appendChild(texto);
             document.querySelector("body")?.appendChild(popup);

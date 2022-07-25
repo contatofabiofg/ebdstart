@@ -13,14 +13,24 @@
             </div>
 
 
-            <h1>{{ item.title }}</h1>
+            <div class="topheaderline d-flex flex-row justify-content-between align-items-center">
+                <h1>{{ item.title }}</h1>
+                <div class="postmenu">
+                    <div class="printarea d-flex flex-row justify-content-between align-items-center" @click="imprimir(item.title, item.subtitle, item.text)">
+                        <div class="printimage"></div>
+                        <div class="printtext">Imprimir</div>
+                    </div>
+                </div>
+            </div>
             <h2>{{ item.subtitle }}</h2>
             <p v-html="item.text"></p>
-            <div class="topo" @click="topo">Voltar para o topo</div>
-            <div class="imprimir" @click="imprimir(item.title, item.subtitle, item.text)">Imprimir</div>
+            <transition name="top">
+            <div v-if="buttontopenable" class="top" @click="topo"></div>
+           </transition>
         </div>
 
     </div>
+
 </template>
 
 <script lang="ts">
@@ -39,14 +49,28 @@ export default defineComponent({
             url: window.location.pathname,
             posts,
             datalogo,
+            buttontopenable: false
+            
         }
     },
+    
 
     mounted() {
-        popup()
+        popup(),
+        window.addEventListener("scroll", () => {this.buttontop()} )
 
     },
     methods: {
+        buttontop() {
+            console.log("chegou")
+            if (window.scrollY > 100) {
+                this.buttontopenable = true
+            } else {
+                 this.buttontopenable = false
+            }
+        },
+       
+        
         popup,
         getcategoryurl(url: string): string {
             let category = url.split("/");
@@ -99,6 +123,7 @@ export default defineComponent({
     font-family: 'Montserrat';
     margin: auto;
     margin-top: 40px;
+    margin-bottom: 40px;
     width: 800px;
     max-width: 90vw;
     word-wrap: break-word;
@@ -111,10 +136,32 @@ a {
     color: rgb(188, 71, 73);
     font-weight: bold;
 }
+.topheaderline {
+    margin-top: 20px;
+}
+.printarea {
+    border: 2px solid gray;
+    border-radius: 20px;
+    padding: 5px;
+    cursor: pointer;
+    user-select: none;
+
+}
+.printimage {
+  width: 15px;
+  height: 15px;
+  background-image: url("../../public/print.png");
+  background-position: center;
+  background-size:cover;
+  margin-right: 5px;
+
+}
+.printtext {
+    font-size: 12px;
+}
 
 h1 {
     font-weight: 900;
-    margin-top: 20px;
 }
 
 h2 {
@@ -127,9 +174,33 @@ p {
     margin-top: 20px;
 }
 
-.topo,
-.imprimir {
-    font-weight: bold;
-    cursor: pointer
+.top {
+    width: 35px;
+    height: 35px;
+    background-image: url("../../public/top.png");
+    background-position: center;
+    background-size:cover;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor:pointer;
 }
+
+.top-enter-from {
+    transform: translateX(30px);
+    opacity: 0;
+}
+.top-enter-active {
+      transition: 0.2s ease all;
+    }
+
+.top-leave-to {
+    transform: translateX(30px);
+    opacity: 0;
+}
+.top-leave-active  {
+    transition: 0.2s ease all;
+}
+
+
 </style>

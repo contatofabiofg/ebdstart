@@ -1,7 +1,7 @@
 <template>
-  
-    <Post :key="componentKey"/>
-  
+<div>
+      <Post :key="componentKey"/>
+      </div>
 </template>
 
 <script lang="ts">
@@ -37,4 +37,6 @@ export default defineComponent({
  width: 750px;
  margin-left: 200px;
 }
+
+
 </style>

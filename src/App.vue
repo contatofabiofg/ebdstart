@@ -1,13 +1,17 @@
 <template>
-<main :class="{'mododark': mododarkative, 'modoclaro': !mododarkative}">
+<main>
   <div class="painel d-flex flex-row justify-content-center align-items-center">
-      <router-view/>
+      <router-view v-slot="{ Component }">
+      <transition name="mainroute" mode="out-in">
+        <component :is="Component"/>
+      </transition>
+    </router-view>
   </div>
 
   </main>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue';  
 
 
 
@@ -15,7 +19,7 @@ export default defineComponent({
   name: 'App',
   data() {
     return {
-      mododarkative: false
+     
     }
   },
   components: {
@@ -23,9 +27,7 @@ export default defineComponent({
 
   },
   methods: {
-    alterarmodo() {
-      this.mododarkative = !this.mododarkative
-    }
+ 
   }
 });
 </script>
@@ -37,8 +39,9 @@ main {
   height: 100vh;
   background-image: url("../public/wall1.png");
   background-position: center;
-  background-size: cover;
- }
+  background-size:cover;
+   }
+
 
 .modoclaro {
   --bg: white;
@@ -66,7 +69,24 @@ main {
 
 .painel {
   overflow-x: hidden;
+  transition: 2s ease all;
+}
+.mainroute-enter-from {
+    transform: translateX(30px);
+    opacity: 0;
 }
 
+.mainroute-enter-active {
+      transition: 0.2s ease all;
+    
+}
+
+.mainroute-leave-to {
+    transform: translateX(-30px);
+    opacity: 0;
+}
+.mainroute-leave-active  {
+    transition: 0.2s ease all;
+}
 
 </style>

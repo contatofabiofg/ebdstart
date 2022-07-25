@@ -2,10 +2,15 @@
   <div class="home d-flex flex-column justify-content-center align-items-center">
       <h1>e ai, o que vamos estudar hoje?</h1>
     <div class="inputarea d-flex flex-row justify-content-center align-items-center">
-      <input class="form-control" placeholder="Digite o que você procura" v-model="busca" />
+      <input class="form-control" placeholder="Buque por livro ou assunto" v-model="busca" />
       
     </div>
-    <router-view/>
+    <router-view v-slot="{ Component }">
+      <transition name="menuroute" mode="out-in" >
+        <component :is="Component"/>
+      </transition>
+    </router-view>
+
       </div>
 </template>
 
@@ -45,6 +50,7 @@ export default defineComponent({
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .home {
   width: 100vw;
+  height: 100%;
   margin-top: 40px;
  
 }
@@ -73,4 +79,27 @@ input {
   background-color: darkgreen;
   cursor: pointer;
 }
+
+.menuroute-enter-from {
+    transform: translateX(30px);
+    opacity: 0;
+}
+
+
+
+.menuroute-enter-active {
+      transition: 0.2s ease all;
+    
+}
+
+.menuroute-leave-to {
+    transform: translateX(-30px);
+    opacity: 0;
+}
+.menuroute-leave-active  {
+    transition: 0.2s ease all;
+}
+
+
+
 </style>

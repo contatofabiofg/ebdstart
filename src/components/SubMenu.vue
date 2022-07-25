@@ -1,5 +1,8 @@
 <template>
     <div class="submenu d-flex flex-row flex-wrap">
+          <router-link to="/">
+             <SmallButton title="Voltar" color="188, 71, 73" image="back.png"/>
+          </router-link>
       <transition-group @before-enter="beforeEnter" @enter="enter" appear >
       <div v-for="(item, index) in posts" :key="index" :data-index="index"> 
       
@@ -88,87 +91,11 @@ export default defineComponent({
     width: 700px;
     max-width: 90vw;
     margin-top: 20px;
-    overflow: hidden
-}
-
-
-.menu1-enter-active {
-    animation: menu1-in 0.5s;
-}
-
-.menu1-leave-active {
-    animation: menu1-in 0.5s reverse;
-}
-
-.menu2-enter-active {
-    animation: menu2-in 0.5s;
-}
-
-.menu2-leave-active {
-    animation: menu2-in 0.5s reverse;
-}
-
-.menutemas-enter-active {
-    animation: menutemas-in 0.5s;
-}
-
-.menutemas-leave-active {
-    animation: menutemas-in 0.5s reverse;
-}
-
-.menuexercicios-enter-active {
-    animation: menuexercicios-in 0.5s;
-}
-
-.menuexercicios-leave-active {
-    animation: menuexercicios-in 0.5s reverse;
-}
-
-@keyframes menu1-in {
-    0% {
-        max-height: 0px;
-        transition: max-height ease;
+    overflow: hidden;
     }
+ a {
+  text-decoration: none;
+ }
 
-    100% {
-        max-height: var(--tamanhomenu1);
-        transition: max-height ease;
-    }
-}
 
-@keyframes menu2-in {
-    0% {
-        max-height: 0px;
-        transition: max-height ease;
-    }
-
-    100% {
-        max-height: var(--tamanhomenu2);
-        transition: max-height ease;
-    }
-}
-
-@keyframes menutemas-in {
-    0% {
-        max-height: 0px;
-        transition: max-height ease;
-    }
-
-    100% {
-        max-height: var(--tamanhotemas);
-        transition: max-height ease;
-    }
-}
-
-@keyframes menuexercicios-in {
-    0% {
-        max-height: 0px;
-        transition: max-height ease;
-    }
-
-    100% {
-        max-height: var(--tamanhoexercicios);
-        transition: max-height ease;
-    }
-}
 </style>

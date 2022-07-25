@@ -89,9 +89,12 @@ export default defineComponent({
 
 .mainmenu {
     width: 740px;
-    max-width: 80%;
+    max-width: 85%;
     overflow: hidden;
 }
+ a {
+  text-decoration: none;
+ }
 
 .submenu {
     overflow: hidden

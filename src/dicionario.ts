@@ -6,6 +6,10 @@ export default [
     {
         titulo: "elit",
         texto: "<div> Texto do elit <div>"
+    },
+    {
+        titulo: "quisque",
+        texto: "<div> Texto do quisque <div>"
     }
        
 ]

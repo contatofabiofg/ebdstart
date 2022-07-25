@@ -25,8 +25,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   
   {
-    path: '/velhotestamento/:page',
-    name: 'page',
+    path: '/:categoria/:page',
     component: Postagens
   },
   {
