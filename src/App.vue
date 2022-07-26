@@ -36,10 +36,14 @@ export default defineComponent({
 
 main {
   width: 100%;
-  height: 100%;
+  height: fit-content;
+  min-height: 100vh;
   background-color: rgb(248, 248, 248);
  
    }
+  body {
+    background-color: rgb(248, 248, 248);
+  }
 
 
 .modoclaro {

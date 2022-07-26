@@ -9,7 +9,7 @@
 
     <div class="inputarea d-flex flex-row justify-content-center align-items-center">
       <input class="form-control" placeholder="Buque por livro ou assunto" v-model="busca"
-        @keyup="realizarbusca(busca)" />
+         />
     </div>
 
     <div class="menuarea d-flex flex-row justify-content-center align-items-center">
@@ -49,6 +49,13 @@ export default defineComponent({
       timeout: 0,
       mododarkativado: false,
 
+    }
+  },
+  mounted() {
+    // @keyUp do vue não funciona em celular
+    let input = document.querySelector("input");
+    if (input) {
+    input.addEventListener("input", () => {this.realizarbusca(this.busca)});
     }
   },
 
@@ -105,7 +112,7 @@ export default defineComponent({
   height: auto;
   border: 1px solid rgb(209, 209, 209);
   border-radius: 5px;
-  padding: 15px;
+  padding: 10px;
   margin-bottom: 10px;
 
 }
@@ -113,7 +120,7 @@ export default defineComponent({
 input {
   width: 100%;
   max-width: 80vw;
-  box-shadow: -5px 5px 25px rgb(236, 236, 236);
+  box-shadow: -5px 5px 15px rgb(236, 236, 236);
 }
 
 .menuroute-enter-from {

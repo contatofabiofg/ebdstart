@@ -140,6 +140,10 @@ export default defineComponent({
   padding: 15px;
   margin-bottom: 10px;
 }
+
+.breadcrumb {
+    font-size: 10px
+}
 .space {
     margin: 0px 10px;
 }

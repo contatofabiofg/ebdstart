@@ -1,12 +1,9 @@
 <template>
   <div class="topicbutton font-weight-bold d-flex flex-column justify-content-center align-items-center cursor-pointer overflow-hidden" :style="`background-color:${color}` ">
  
-    
     <div class="name d-flex flex-row justify-content-center align-items-center" >
         <div>{{title}}</div>
     </div>
-    
-    
     
   </div>
 
@@ -66,7 +63,8 @@ export default defineComponent({
 
 }
 .name {
-  margin-left: 10px
+  user-select: none;
+ 
 }
 
 @media (max-width: 500px) {  

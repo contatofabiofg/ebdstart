@@ -1,17 +1,17 @@
 <template>
-<div class="searchmenuarea d-flex flex-row justify-content-center align-items-center">
-        {{requisicaoteste("Menu Busca Carregado")}}
-           
-            <div v-for="(item, index) in posts" :key="index"> 
-                
-                <router-link v-if="simplefystring(item.title).startsWith(search!.toLowerCase()) && search! !== ''" :to="item.path" >
-                    <SmallButton :title="item.title" :color="item.color" image="book.png"/>
-                </router-link>
-                
-                
-            </div>
-            </div>
-        </template>
+  <div class="searchmenuarea d-flex flex-row flex-wrap">
+  
+    <div v-for="(item, index) in posts" :key="index">
+
+      <router-link v-if="simplefystring(item.title).startsWith(search!.toLowerCase()) && search! !== ''"
+        :to="item.path">
+        <SmallButton :title="item.title" :color="item.color" image="book.png" />
+      </router-link>
+
+
+    </div>
+  </div>
+</template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
@@ -24,36 +24,39 @@ export default defineComponent({
   name: 'SearchOptions',
   data() {
     return {
-            posts,
-            timeout: 0,
+      posts,
+      timeout: 0,
     }
   },
-props: {
+  props: {
     search: String
-    
+
   },
-  
+
 
   methods: {
     simplefystring,
-        requisicaoteste(texto: string): void {
-            console.log(texto)
-        },
-        
-  }, 
+    requisicaoteste(texto: string): void {
+      console.log(texto)
+    },
+
+  },
   components: {
-    
+
     SmallButton
-    
+
   }
- 
-  });
+
+});
 
 </script>
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.searchmenuarea {
+  width: 100%;
+  height: auto;
+}
 
 </style>

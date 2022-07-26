@@ -38,11 +38,11 @@ export default defineComponent({
     },
     
     methods: {
-        beforeEnter(el: HTMLElement): void {
+        beforeEnter(el: HTMLElement){
             el.style.opacity = "0";
             el.style.transform = "translateY(-30px)"
         },
-        enter(el: HTMLElement, done: any):void {
+        enter(el: HTMLElement, done: any) {
             if (el.dataset.index) {
             this.time = el.dataset.index
             }
@@ -69,17 +69,8 @@ export default defineComponent({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-
-    
-   
-   
-   
-  
     
 a {
   text-decoration: none;
  }
-
-
 </style>

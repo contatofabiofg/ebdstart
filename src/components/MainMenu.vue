@@ -14,10 +14,10 @@
             <TopicButton2 title="Título de Teste4" color="rgb(90, 6, 64)" image="scribe.jpg" />
         </router-link>
 
-        <TopicButton title="Dicionário" color="rgb(120, 86, 64)"/>
-        <TopicButton title="Mídias" color="rgb(120, 86, 64)"/>
-        <TopicButton title="Orientações" color="rgb(120, 86, 64)"/>
-        <TopicButton title="Contribua" color="rgb(120, 86, 64)"/>
+        <TopicButton title="Dicionário" color="rgb(79, 121, 92)"/>
+        <TopicButton title="Mídias" color="rgb(79, 121, 92)"/>
+        <TopicButton title="Orientações" color="rgb(79, 121, 92)"/>
+        <TopicButton title="Contribua" color="rgb(79, 121, 92)"/>
 
 
     </div>
@@ -71,8 +71,6 @@ export default defineComponent({
 }
 
 .mainmenu {
-    width: 740px;
-    
     overflow: hidden;
 }
  a {
