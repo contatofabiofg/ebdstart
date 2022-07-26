@@ -12,7 +12,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import SubMenu from "@/components/SubMenu.vue";
-import SearchMenu from "@/components/SearchMenu.vue";
+import SearchMenu from "@/components/SearchOptions.vue";
 
 import postagem from "@/posts";
 

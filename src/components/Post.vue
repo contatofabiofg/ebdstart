@@ -4,7 +4,8 @@
     <div v-for="(item, index) in posts" :key="index">
 
         <div class="postarea" v-if="item.path == url">
-            <div>
+            
+            <div class="breadcrumb ">
                 <router-link to="/">home</router-link>
                 <div class="space d-inline">•</div>
                 <router-link :to="`/` + getcategoryurl(url)">{{ item.category }}</router-link>
@@ -12,7 +13,7 @@
                 <div class="d-inline">{{ item.title }}</div>
             </div>
 
-
+            <article>
             <div class="topheaderline d-flex flex-row justify-content-between align-items-center">
                 <h1>{{ item.title }}</h1>
                 <div class="postmenu">
@@ -24,9 +25,12 @@
             </div>
             <h2>{{ item.subtitle }}</h2>
             <p v-html="item.text"></p>
+</article>
+
             <transition name="top">
             <div v-if="buttontopenable" class="top" @click="topo"></div>
            </transition>
+
         </div>
 
     </div>
@@ -121,12 +125,20 @@ export default defineComponent({
 
     color: var(--texto);
     font-family: 'Montserrat';
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    width: 800px;
-    max-width: 90vw;
+    
+    margin-top: 20px;
     word-wrap: break-word;
+}
+
+.breadcrumb, article {
+    background-color: rgba(255,255,255,0.7);
+  width: 900px;
+  max-width: 90vw;
+  height: auto;
+  border: 1px solid rgb(209, 209, 209);
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
 }
 .space {
     margin: 0px 10px;

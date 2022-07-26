@@ -5,7 +5,7 @@
     </div>
     
     
-    <div class="name d-flex flex-row justify-content-center align-items-center" :style="`background-color:${color}` ">
+    <div class="name d-flex flex-row justify-content-center align-items-center word-break" :style="`background-color:${color}` ">
         <div>{{title}}</div>
     </div>
     
@@ -122,7 +122,10 @@ export default defineComponent({
 @media (max-width: 500px) {  
   .topicbutton2 {
   height: 180px;
-  width: 140px;
+  width: 120px;
+}
+.name {
+  font-size: 12px
 }
 }
 

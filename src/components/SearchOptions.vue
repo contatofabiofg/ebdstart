@@ -1,27 +1,27 @@
 <template>
-
+<div class="searchmenuarea d-flex flex-row justify-content-center align-items-center">
         {{requisicaoteste("Menu Busca Carregado")}}
            
             <div v-for="(item, index) in posts" :key="index"> 
                 
-                <router-link v-if="item.title.toLowerCase().startsWith(search!.toLowerCase()) && search! !== ''" style="text-decoration: none; color: inherit;"
-                    :to="item.path" >
-                    <Button :texto="item.title" />
+                <router-link v-if="simplefystring(item.title).startsWith(search!.toLowerCase()) && search! !== ''" :to="item.path" >
+                    <SmallButton :title="item.title" :color="item.color" image="book.png"/>
                 </router-link>
                 
                 
+            </div>
             </div>
         </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Button from "@/components/Button.vue"
+import SmallButton from "@/components/SmallButton.vue"
 import posts from "@/posts"
-import _ from 'lodash';
+import { simplefystring } from "@/functions/simplefystring"
 
 
 export default defineComponent({
-  name: 'MenuBuscaC',
+  name: 'SearchOptions',
   data() {
     return {
             posts,
@@ -35,6 +35,7 @@ props: {
   
 
   methods: {
+    simplefystring,
         requisicaoteste(texto: string): void {
             console.log(texto)
         },
@@ -42,13 +43,14 @@ props: {
   }, 
   components: {
     
-    Button,
+    SmallButton
     
   }
  
   });
 
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

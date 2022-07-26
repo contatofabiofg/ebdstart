@@ -6,7 +6,7 @@
       <transition-group @before-enter="beforeEnter" @enter="enter" appear >
       <div v-for="(item, index) in posts" :key="index" :data-index="index"> 
       
-        <router-link :to="item.path">
+        <router-link v-if="item.path.split('/')[1] == url.split('/')[1]" :to="item.path">
             <SmallButton :title="item.title" :color="item.color" image="book.png"/>
         </router-link>
        
@@ -28,15 +28,11 @@ export default defineComponent({
     name: 'SubmenuC',
     data() {
         return {
-
-            topicos1: false,
-            topicos2: false,
-            topicos3: false,
-            menuexercicios: false,
             posts,
             exercicio,
             timeout: 0,
-            time: ""
+            time: "",
+            url: window.location.pathname
 
         }
     },
@@ -61,18 +57,6 @@ export default defineComponent({
             })
         },
 
-        requisicaoteste(texto: string): void {
-            console.log(texto)
-        },
-        mostrarlista1(): void {
-            this.topicos1 = !this.topicos1; //esse código retorna um true ou false, ou seja, o retorno será o retorno dessa operação de comparação
-        },
-        mostrarlista2(): void {
-            this.topicos2 = !this.topicos2 //esse código retorna um true ou false, ou seja, o retorno será o retorno dessa operação de comparação
-        },
-        mostrarexercicios(): void {
-            this.menuexercicios = !this.menuexercicios //esse código retorna um true ou false, ou seja, o retorno será o retorno dessa operação de comparação
-        }
 
     },
     components: {
@@ -86,14 +70,14 @@ export default defineComponent({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.submenu {
+
     
-    width: 700px;
-    max-width: 90vw;
-    margin-top: 20px;
-    overflow: hidden;
-    }
- a {
+   
+   
+   
+  
+    
+a {
   text-decoration: none;
  }
 

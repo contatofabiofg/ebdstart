@@ -71,7 +71,7 @@ export default defineComponent({
 
 @media (max-width: 500px) {  
   .topicbutton {
-   width: 140px;
+   width: 120px;
 }
 }
 

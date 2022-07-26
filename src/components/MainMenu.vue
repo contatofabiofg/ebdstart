@@ -1,10 +1,10 @@
 <template>
     <div class="mainmenu d-flex flex-row flex-wrap justify-content-center align-items-center">
-        {{ requisicaoteste("Menu Principal Carregado") }}
+        
         <router-link to="/velhotestamento">
             <TopicButton2 title="Título de Teste" color="rgb(90, 86, 64)" image="at.jpg" />
         </router-link>
-        <router-link to="/velhotestamento">
+        <router-link to="/novotestamento">
             <TopicButton2 title="Título de Teste2" color="rgb(120, 86, 64)" image="nt.jpg" />
         </router-link>
         <router-link to="velhotestamento">
@@ -47,27 +47,10 @@ export default defineComponent({
 
         }
     },
-    mounted() {
-        document.documentElement.style.setProperty('--tamanhomenu1', `${(31 * (this.posts.length + 1))}px`);
-        document.documentElement.style.setProperty('--tamanhomenu2', `${(31 * (this.posts.length + 1))}px`);
-        document.documentElement.style.setProperty('--tamanhotemas', `${(31 * (this.posts.length + 1))}px`);
-        document.documentElement.style.setProperty('--tamanhoexercicios', `${(31 * (this.exercicio.length + 1))}px`);
-    },
-
+  
+        
     methods: {
-        requisicaoteste(texto: string): void {
-            console.log(texto)
-        },
-        mostrarlista1(): void {
-            this.topicos1 = !this.topicos1; //esse código retorna um true ou false, ou seja, o retorno será o retorno dessa operação de comparação
-        },
-        mostrarlista2(): void {
-            this.topicos2 = !this.topicos2 //esse código retorna um true ou false, ou seja, o retorno será o retorno dessa operação de comparação
-        },
-        mostrarexercicios(): void {
-            this.menuexercicios = !this.menuexercicios //esse código retorna um true ou false, ou seja, o retorno será o retorno dessa operação de comparação
-        }
-
+   
     },
     components: {
         TopicButton,
@@ -89,7 +72,7 @@ export default defineComponent({
 
 .mainmenu {
     width: 740px;
-    max-width: 85%;
+    
     overflow: hidden;
 }
  a {

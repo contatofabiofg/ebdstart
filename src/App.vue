@@ -35,11 +35,10 @@ export default defineComponent({
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 main {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../public/wall1.png");
-  background-position: center;
-  background-size:cover;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(248, 248, 248);
+ 
    }
 
 

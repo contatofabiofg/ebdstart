@@ -33,10 +33,7 @@ export default defineComponent({
 });
 </script>
 <style>
-.postarea {
- width: 750px;
- margin-left: 200px;
-}
+
 
 
 </style>

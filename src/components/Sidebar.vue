@@ -22,7 +22,7 @@ import Logo from "@/components/Logo.vue";
 import DarkMode from "@/components/DarkMode.vue";
 import _ from 'lodash';
 import MenuPrincipal from './MainMenu.vue';
-import MenuBusca from './SearchMenu.vue';
+import MenuBusca from './SearchOptions.vue';
 
 export default defineComponent({
     name: 'SidebarC',
