@@ -67,10 +67,24 @@ export default defineComponent({
  
 }
 
+@media (min-width: 500px) and (max-width: 1000px) {
+  .topicbutton {
+   width: 19vw;
+}
+.name {
+  font-size: 12px;
+}
+
+}
+
 @media (max-width: 500px) {  
   .topicbutton {
-   width: 120px;
+   width: 38vw;
 }
+.name {
+  font-size: 12px;
+}
+
 }
 
 

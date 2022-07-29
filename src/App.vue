@@ -39,11 +39,10 @@ main {
   height: fit-content;
   min-height: 100vh;
   background-color: rgb(248, 248, 248);
+  
  
    }
-  body {
-    background-color: rgb(248, 248, 248);
-  }
+
 
 
 .modoclaro {

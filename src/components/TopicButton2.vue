@@ -6,7 +6,7 @@
     
     
     <div class="name d-flex flex-row justify-content-center align-items-center word-break" :style="`background-color:${color}` ">
-        <div>{{title}}</div>
+        <div class="nametext">{{title}}</div>
     </div>
     
     
@@ -96,7 +96,10 @@ export default defineComponent({
     width: 100%;
     height: 70px;
     z-index: 1;
+    text-align: center;
+    
 }
+
 .animateclass {
     
     animation: imagemanimada 1.5s;
@@ -119,10 +122,21 @@ export default defineComponent({
     }
 }
 
+@media (min-width: 500px) and (max-width: 1000px) {
+  .topicbutton2 {
+   width: 19vw;
+}
+.name {
+  font-size: 12px;
+}
+
+}
+
+
 @media (max-width: 500px) {  
   .topicbutton2 {
   height: 180px;
-  width: 120px;
+  width: 38vw;
 }
 .name {
   font-size: 12px

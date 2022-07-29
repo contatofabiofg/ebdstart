@@ -14,18 +14,11 @@
             <TopicButton2 title="Título de Teste4" color="rgb(90, 6, 64)" image="scribe.jpg" />
         </router-link>
 
-        <TopicButton title="Dicionário" color="rgb(79, 121, 92)"/>
-        <TopicButton title="Mídias" color="rgb(79, 121, 92)"/>
-        <TopicButton title="Orientações" color="rgb(79, 121, 92)"/>
-        <TopicButton title="Contribua" color="rgb(79, 121, 92)"/>
-
-
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import TopicButton from "@/components/TopicButton.vue"
 import TopicButton2 from "@/components/TopicButton2.vue"
 import posts from "@/posts"
 import exercicio from "@/exercicios"
@@ -37,14 +30,6 @@ export default defineComponent({
     data() {
         return {
 
-            topicos1: false,
-            topicos2: false,
-            topicos3: false,
-            menuexercicios: false,
-            posts,
-            exercicio,
-            timeout: 0,
-
         }
     },
   
@@ -53,8 +38,7 @@ export default defineComponent({
    
     },
     components: {
-        TopicButton,
-        TopicButton2
+            TopicButton2
     }
 
 });

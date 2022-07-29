@@ -3,7 +3,9 @@
 
     <div class="topbar d-flex flex-row justify-content-between align-items-center">
       <div>help</div>
+      <router-link to="/">
       <div class="logo"></div>
+      </router-link>
       <div>contribute</div>
     </div>
 
@@ -146,7 +148,7 @@ input {
 
 @media (max-width: 500px) {  
 .logo {
-  transform: scale(50%)
+  transform: scale(80%)
 }
 }
 </style>

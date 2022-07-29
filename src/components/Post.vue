@@ -131,7 +131,7 @@ export default defineComponent({
 }
 
 .breadcrumb, article {
-    background-color: rgba(255,255,255,0.7);
+  background-color: rgba(255,255,255,0.7);
   width: 900px;
   max-width: 90vw;
   height: auto;
@@ -142,7 +142,7 @@ export default defineComponent({
 }
 
 .breadcrumb {
-    font-size: 10px
+    font-size: 12px
 }
 .space {
     margin: 0px 10px;
